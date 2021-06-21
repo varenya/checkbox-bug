@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './Checkbox.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function Checkbox() {
+    const [checked, setChecked] = useState(false);
+    function toggleChecked() {
+        setChecked((prev) => !prev);
+    }
+    return (
+        <div className="testing">
+            <label className="container">
+                {checked ? 'checked' : 'not checked'}
+                <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={toggleChecked}
+                />
+                <span className="checkmark"></span>
+            </label>
+            <a href="https://github.com">Testing</a>
+        </div>
+    );
 }
 
-export default App;
+export { Checkbox };

@@ -6,13 +6,14 @@ function Checkbox() {
     function toggleChecked() {
         setChecked((prev) => !prev);
     }
+    const props = checked ? { checked :true} : {};
     return (
         <div className="testing">
             <label className="container">
                 {checked ? 'checked' : 'not checked'}
                 <input
                     type="checkbox"
-                    checked={checked}
+                    {...props} 
                     onChange={toggleChecked}
                 />
                 <span className="checkmark"></span>
